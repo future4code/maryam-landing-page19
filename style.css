@@ -91,13 +91,13 @@ main {
 }
 .titulo-promocao {
   position: absolute;
-  right: 37%;
+  right: 31%;
 }
 #promocao h3 {
   display: flex;
   justify-content: center;
   color: #fff;
-  font-size: 6em;
+  font-size: 6rem;
   font-family: "Montserrat";
   -webkit-text-stroke: 1px grey;
 }
@@ -105,7 +105,7 @@ main {
   display: flex;
   justify-content: center;
   color: #fff;
-  font-size: 4em;
+  font-size: 4rem;
   font-family: "Montserrat";
   -webkit-text-stroke: 1px grey;
 }
@@ -117,11 +117,28 @@ main {
   /* margin: 5vh 8vh 0vh 8vh; */
   column-gap: 20px;
   /* height: fit-content; */
+ 
 }
 .categorias {
   grid-column: 2/6;
-  background-color: hotpink;
+  /* background-color: hotpink; */
   height: 24vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.categorias img{
+  height: 25vh;
+  width: 37vh;
+  border-radius: 8px;
+}
+
+#produtos h5{
+  text-align: center;
+  font-size: 1.3em;
+  color: #5c331d;
 }
 #alimentos {
   grid-column: 1/2;
@@ -164,6 +181,65 @@ main {
 
 /***** SECTION FAQ *****/
 
+.perguntas-frequentes,
+input {
+  display: none;
+
+}
+
+
+input + label:before {
+  background-image: url("https://icons-for-free.com/iconfiles/png/512/arrow+essential+right+ui+icon-1320166506597285947.png");
+  background-size: 20px 20px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  content: "";
+  margin-right: 1vw;
+}
+
+
+input:checked + label:before {
+  background-image: url("https://icons-for-free.com/iconfiles/png/512/arrow+down+essential+ui+icon-1320166506450388543.png");
+  background-size: 20px 20px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  content: "";
+}
+
+input:checked ~ .perguntas-frequentes {
+  display: block;
+}
+
+
+
+li{
+  list-style: none;
+  margin: 2vh 0;
+  font-size: 1.3rem;
+  color: #5c331d;
+}
+
+label{
+  font-size: 1.7rem;
+  color: #5c331d;
+  /* margin-left: 2vw; */
+}
+
+#faq{
+  margin: 4vh 9vw
+  
+}
+
+#faq h3{
+  font-size: 3em;
+  color: #5c331d;
+}
+
+#faq p{
+  margin: 2vh 0
+}
 
 /***** FOOTER *****/
 footer {
@@ -185,33 +261,112 @@ a {
   text-decoration: none;
 }
 
-/*FAQ*/
-.perguntas-frequentes,
-input {
-  display: none;
+
+/* RESPONSIVIDADE */
+
+@media screen and (max-device-width: 900px){
+
+  nav a{
+    display: none;
+  }
+
+  .botoes-login{
+    display: flex;
+  }
+
+  .titulo p{
+    display: none;
+  }
+
+  #promocao h3, #promocao h4{
+    font-size: 1.4rem;
+    
+  }
+
+  .titulo-promocao{
+    right: 28%;
+  }
+
+  #produtos{
+    display: flex;
+    flex-direction: column;
+          
+  }
+
+  .categorias{
+    height: fit-content;
+    margin: 2vh 0
+  }
+
+ 
+
+  .categorias img{
+    display: none;
+  }
+
+  #quem-somos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #quem-somos img{
+    width: 30vh;
+    max-width: fit-content;
+    margin-right: 0;
+  }
+
+  #quem-somos h1{
+    font-size: 2rem;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
+
+  #faq h3{
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  label{
+    font-size: 1.3rem;
+  }
+
+  input + label:before {
+    background-image: url("https://icons-for-free.com/iconfiles/png/512/arrow+essential+right+ui+icon-1320166506597285947.png");
+    background-size: 10px 10px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    content: "";
+    margin-right: 1vw;
+  }
+  
+  
+  input:checked + label:before {
+    background-image: url("https://icons-for-free.com/iconfiles/png/512/arrow+down+essential+ui+icon-1320166506450388543.png");
+    background-size: 10px 10px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    content: "";
+  }
+
+  .icone{
+    width: 30px;
+    height: 30px;
+    
+  }
+
+  .redes-sociais{
+    display: flex;
+    margin: 0 2em
+  }
+
+  .onde-estamos{
+
+  }
+
 }
 
-/* Texto exibido quando o checkbox não estiver marcado. */
-input + label:before {
-  background-image: url("https://icons-for-free.com/iconfiles/png/512/arrow+essential+right+ui+icon-1320166506597285947.png");
-  background-size: 10px 10px;
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  content: "";
-}
 
-/* Texto exibido quando o checkbox estiver marcado. */
-input:checked + label:before {
-  background-image: url("https://icons-for-free.com/iconfiles/png/512/arrow+down+essential+ui+icon-1320166506450388543.png");
-  background-size: 10px 10px;
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  content: "";
-}
-
-/* Exibe o elemento de ID 'bandeiras' quando o checkbox estiver marcado. */
-input:checked ~ .perguntas-frequentes {
-  display: block;
-}
